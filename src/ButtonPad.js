@@ -1,17 +1,17 @@
 import React from 'react';
 
-let buttonsArray = [1,2,3,4,5,6,7,8,9,0]
 
 
-export default function NumberPad(props) {
+
+export default function ButtonPad(props) {
   return(
     <div>
-    {buttonsArray.map(x=>
+    {props.typeArray.map(x=>
         <button
         onClick={props.numberClick}
         key={x}
         value={x}
-        className="numberButton"
+        className="pad-button"
         >{x}
         </button>)}
   </div>
