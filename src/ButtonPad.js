@@ -8,7 +8,7 @@ export default function ButtonPad(props) {
     <div>
     {props.typeArray.map(x=>
         <button
-        onClick={props.numberClick}
+        onClick={props.buttonFunction}
         key={x}
         value={x}
         className="pad-button"
