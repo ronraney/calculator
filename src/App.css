@@ -4,7 +4,39 @@
   text-align: center;
 }
 
+#mainbox{
+  height: 250px;
+  display: flex;
+  flex-flow: wrap;
+  width: 160px;
+  /* justify-content: space-between; */
+}
 
+.pad-button{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+}
+#numbers-clear-box{
+  width: 120px;
+}
+.basic-arithmetic.container{
+  width: 40px;
+  order: 3;
+}
+
+.numbers.container{
+  /* display: block; */
+  width: 120px;
+  order: 2;
+}
+
+.clear.container {
+  width: 80px;
+  order: 1;
+  height: 40px;
+}
 
 .App-header {
   background-color: #282c34;

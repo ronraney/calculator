@@ -13,16 +13,14 @@ class App extends Component {
       numIsNeg: false,
 
     }
-    this.addOperator = this.addOperator.bind(this);
+    this.addArithmeticOperator = this.addArithmeticOperator.bind(this);
     this.numberClick = this.numberClick.bind(this);
-    this.allClear = this.allClear.bind(this);
+    this.clearDisplay = this.clearDisplay.bind(this);
   }
 
 
   numberClick(e) {
-    if(this.state.calcDisplay.indexOf("0")===1&&this.state.calcDisplay.indexOf(".")!==2){
-      this.setState({calcDisplay: this.state.calcDisplay.slice(1)})
-    }
+
     let input = e.target.value;
     let digit;
     switch(input) {
@@ -67,7 +65,7 @@ class App extends Component {
 
 
 
-  addOperator(e) {
+  addArithmeticOperator(e) {
     let input =  (e.target.value);
     if (this.state.operator!==''||input==="=") {
       let output = this.state.numInMem+this.state.calcDisplay;
@@ -116,34 +114,47 @@ class App extends Component {
     });
  }
 
- allClear () {
+ clearDisplay (e) {
+   if(e.target.value==="AC"){
    this.setState({
      calcDisplay: "0",
      numInMem: "",
      operator: "",
      numIsNeg: false,
    })
+ } else {
+   this.setState({
+     calcDisplay: "0",
+   })
+ }
  }
 
   render() {
-    const operatorArray = ["+","-","*","/","="]
+    const arithmeticOperatorArray = ["+","-","*","/","="]
     const numbersArray = [1,2,3,4,5,6,7,8,9,".",0,"+/-"]
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="display-box" id="title">{this.state.calcDisplay}</h1>
+          <div id="mainbox">
+            <div id="numbers-clear-box">
+            <ButtonPad
+            type="clear"
+            buttonFunction={this.clearDisplay}
+            typeArray={["AC","C"]}
+            />
+            <ButtonPad
+            type="numbers"
+            buttonFunction={this.numberClick}
+            typeArray={numbersArray}
+            />
+            </div>
           <ButtonPad
-          buttonFunction={this.allClear}
-          typeArray={["AC"]}
+          type="basic-arithmetic"
+          buttonFunction={this.addArithmeticOperator}
+          typeArray={arithmeticOperatorArray}
           />
-          <ButtonPad
-          buttonFunction={this.numberClick}
-          typeArray={numbersArray}
-          />
-          <ButtonPad
-          buttonFunction={this.addOperator}
-          typeArray={operatorArray}
-          />
+          </div>
 
         </header>
       </div>
