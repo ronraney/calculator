@@ -2,44 +2,7 @@
 
 .App {
   text-align: center;
-}
-
-#mainbox{
-  height: 250px;
-  display: flex;
-  flex-flow: wrap;
-  width: 160px;
-  /* justify-content: space-between; */
-}
-
-.pad-button{
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  border: none;
-}
-#numbers-clear-box{
-  width: 120px;
-}
-.basic-arithmetic.container{
-  width: 40px;
-  order: 3;
-}
-
-.numbers.container{
-  /* display: block; */
-  width: 120px;
-  order: 2;
-}
-
-.clear.container {
-  width: 80px;
-  order: 1;
-  height: 40px;
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -49,6 +12,64 @@
   color: white;
 }
 
+#mainbox{
+  height: 254px;
+  display: flex;
+  flex-flow: wrap;
+  width: 165px;
+  /* justify-content: space-between; */
+}
+
+.pad-button{
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  border: none;
+  margin: .5px;
+}
+
+#numbers-clear-box {
+  width: 75%;
+}
+
+.basic-arithmetic.container {
+  width: 25%;
+  order: 3;
+  /* margin-left: 3px; */
+}
+
+.basic-arithmetic button {
+  background-color: #f09a37;
+  color: white;
+}
+
+#numbers0{
+  width: 66%;
+  border-radius: 20px;
+}
+
+.numbers.container {
+  /* display: block; */
+  width: 100%;
+  order: 2;
+}
+
+.numbers button {
+  background-color: #333333;
+  color: white;
+}
+
+.clear.container {
+  width: 100%;
+  order: 1;
+  height: 41px;
+}
+
+.clear button {
+  background-color: #a5a5a5;
+}
+
+
 
 #title{
   animation-name: fade-in;
@@ -56,6 +77,10 @@
   font-size: 40px;
   display: block;
   font-family: 'Terminator Cyr', arial;
+}
+
+.non-basic-function-buttons{
+  background-color: #212121;
 }
 
 @keyframes fade-in {

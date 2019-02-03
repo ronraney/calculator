@@ -24,21 +24,6 @@ class App extends Component {
     let input = e.target.value;
     let digit;
     switch(input) {
-      case "+/-":
-        // attaches or removes the minus sign and updates our numIsNeg state
-        if(this.state.numIsNeg) {
-          digit = this.state.calcDisplay.slice(1);
-        return this.setState({
-          numIsNeg : false,
-          calcDisplay : digit
-        });
-        } else {
-          digit = `-${this.state.calcDisplay}`
-        return this.setState({
-          numIsNeg: true,
-          calcDisplay : digit
-        });
-        }
 
         //adds a decimal point ideally once and only once
       case "." :
@@ -53,6 +38,11 @@ class App extends Component {
     }
     if (this.state.operator!=='') {
       digit = `${input}`
+    }
+    if (digit!==0) {
+      if(digit.indexOf("0")===0 && digit.indexOf(".")!==1){
+      digit=digit.slice(1);
+    }
     }
     //prevents an unnecessary state change
     if(digit!==this.state.calcDisplay) {
@@ -115,13 +105,26 @@ class App extends Component {
  }
 
  clearDisplay (e) {
-   if(e.target.value==="AC"){
-   this.setState({
-     calcDisplay: "0",
-     numInMem: "",
-     operator: "",
-     numIsNeg: false,
-   })
+   let digit;
+   if(e.target.value==="+/-"){
+       // attaches or removes the minus sign and updates our numIsNeg state
+       if(this.state.numIsNeg) {
+         digit = this.state.calcDisplay.slice(1);
+       return this.setState({
+         numIsNeg : false,
+         calcDisplay : digit
+       });
+       } else {
+         digit = `-${this.state.calcDisplay}`
+       return this.setState({
+         numIsNeg: true,
+         calcDisplay : digit
+       });
+       }
+     }
+    if(e.target.value==="%"){
+      digit=Number(this.state.calcDisplay)*.01;
+      this.setState({calcDisplay: digit})
  } else {
    this.setState({
      calcDisplay: "0",
@@ -131,17 +134,18 @@ class App extends Component {
 
   render() {
     const arithmeticOperatorArray = ["+","-","*","/","="]
-    const numbersArray = [1,2,3,4,5,6,7,8,9,".",0,"+/-"]
+    const numbersArray = [1,2,3,4,5,6,7,8,9,0,"."]
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="display-box" id="title">{this.state.calcDisplay}</h1>
+        </header>
           <div id="mainbox">
             <div id="numbers-clear-box">
             <ButtonPad
             type="clear"
             buttonFunction={this.clearDisplay}
-            typeArray={["AC","C"]}
+            typeArray={["C","+/-","%"]}
             />
             <ButtonPad
             type="numbers"
@@ -156,7 +160,6 @@ class App extends Component {
           />
           </div>
 
-        </header>
       </div>
     );
   }
