@@ -1,22 +1,25 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\halbe\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
+  C:\Program Files\nodejs\node.exe C:\Users\halbe\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
 
 PATH: 
-  C:\Program Files\Git\mingw64\libexec\git-core;C:\Users\halbe\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\halbe\bin;C:\Program Files\Microsoft MPI\Bin;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\dotnet;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Program Files (x86)\Common Files\Adobe\AGL;C:\Users\halbe\AppData\Local\Microsoft\WindowsApps;C:\Users\halbe\AppData\Roaming\Dashlane\4.7.2.30899\bin\Firefox_Extension\{442718d9-475e-452a-b3e1-fb1ee16b8e9f}\components;C:\Users\halbe\AppData\Roaming\Dashlane\4.7.2.30899\ucrt;C:\Users\halbe\AppData\Local\atom\bin;C:\Users\halbe\AppData\Local\Microsoft\WindowsApps;C:\Users\halbe\AppData\Roaming\npm;C:\Users\halbe\AppData\Local\Programs\Python\Python36-32;C:\Users\halbe\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Users\halbe\AppData\Local\Programs\Python\Python36-32\Lib\site-packages;C:\Users\halbe\AppData\Roaming\Dashlane\5.10.0.18444\bin\Firefox_Extension\{442718d9-475e-452a-b3e1-fb1ee16b8e9f}\components;C:\Users\halbe\AppData\Roaming\Dashlane\5.10.0.18444\ucrt;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\ImageMagick-7.0.8-Q16;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Common Files\Adobe\AGL;C:\Program Files\Amazon\AWSCLI\bin\;C:\Program Files\PuTTY\;c:\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\Gow\bin;C:\HashiCorp\Vagrant\bin;C:\Users\halbe\AppData\Local\Microsoft\WindowsApps;C:\Users\halbe\AppData\Roaming\Dashlane\4.7.2.30899\bin\Firefox_Extension\{442718d9-475e-452a-b3e1-fb1ee16b8e9f}\components;C:\Users\halbe\AppData\Roaming\Dashlane\4.7.2.30899\ucrt;C:\Users\halbe\AppData\Local\atom\bin;C:\Users\halbe\AppData\Local\Microsoft\WindowsApps;C:\Users\halbe\AppData\Roaming\npm;C:\Users\halbe\AppData\Local\Programs\Python\Python36-32;C:\Users\halbe\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Users\halbe\AppData\Local\Programs\Python\Python36-32\Lib\site-packages;%DASHLANE_DLL_DIR%;C:\Program Files\Amazon\AWSCLI;C:\Program Files\php;c:\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\Java\javapath;C:\Program Files\heroku\bin
 
 Yarn version: 
   1.13.0
 
 Node version: 
-  8.10.0
+  8.11.2
 
 Platform: 
   win32 x64
 
 Trace: 
-  SyntaxError: C:\Users\halbe\Documents\calculator\package.json: Unexpected string in JSON at position 338
-      at JSON.parse (<anonymous>)
-      at C:\Users\halbe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
+  SyntaxError: Unknown token: { line: 1, col: 0, type: 'INVALID', value: undefined } 1:0 in C:\Users\halbe\Documents\calculator\yarn.lock
+      at Parser.unexpected (C:\Users\halbe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:63211:11)
+      at Parser.parse (C:\Users\halbe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:63342:14)
+      at parse (C:\Users\halbe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:63413:17)
+      at module.exports.exports.default (C:\Users\halbe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:62982:96)
+      at Function.<anonymous> (C:\Users\halbe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:3035:63)
       at Generator.next (<anonymous>)
       at step (C:\Users\halbe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:304:30)
       at C:\Users\halbe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:315:13
@@ -26,6 +29,7 @@ npm manifest:
   {
     "name": "calculator",
     "version": "0.1.0",
+    "homepage": "https://halbeckerman.net/calculator",
     "private": true,
     "dependencies": {
       "react": "^16.7.0",
@@ -35,7 +39,7 @@ npm manifest:
     "scripts": {
       "start": "react-scripts start",
       "build": "react-scripts build",
-      "deploy": "aws cp build s3://halbeckerman.net/calculator --recursive"
+      "deploy": "aws s3 sync build s3://halbeckerman.net/calculator",
       "test": "react-scripts test",
       "eject": "react-scripts eject"
     },
@@ -59,15 +63,15 @@ npm manifest:
     "license": "ISC",
     "bugs": {
       "url": "https://github.com/ronraney/calculator/issues"
-    },
-    "homepage": "https://halbeckerman.net/calculator"
+    }
+  
   }
 
 yarn manifest: 
   No manifest
 
 Lockfile: 
-  # THIS IS AN AUTOGENERATED FILE. DO NOT EDIT THIS FILE DIRECTLY.
+  ~# THIS IS AN AUTOGENERATED FILE. DO NOT EDIT THIS FILE DIRECTLY.
   # yarn lockfile v1
   
   

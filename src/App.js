@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ButtonPad from './ButtonPad';
+import SideScreen from './SideScreen';
 
 import './App.css';
 
@@ -13,6 +14,7 @@ class App extends Component {
       numIsNeg: false,
 
     }
+    this.basicExponentFunc = this.basicExponentFunc.bind(this);
     this.addArithmeticOperator = this.addArithmeticOperator.bind(this);
     this.numberClick = this.numberClick.bind(this);
     this.clearDisplay = this.clearDisplay.bind(this);
@@ -104,6 +106,22 @@ class App extends Component {
     });
  }
 
+ basicExponentFunc(e) {
+   let digit;
+   switch (e.target.value) {
+     case "x^2":
+       digit = Math.pow(Number(this.state.calcDisplay), 2).toString();
+       break;
+     case "x^3":
+       digit = Math.pow(Number(this.state.calcDisplay), 3).toString();
+       break;
+     default:
+        console.log("I dont know yet")
+      }
+    this.setState({calcDisplay : digit});
+   }
+
+
  clearDisplay (e) {
    let digit;
    if(e.target.value==="+/-"){
@@ -135,11 +153,13 @@ class App extends Component {
   render() {
     const arithmeticOperatorArray = ["+","-","*","/","="]
     const numbersArray = [1,2,3,4,5,6,7,8,9,0,"."]
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="display-box" id="title">{this.state.calcDisplay}</h1>
         </header>
+        <div id="keyboard-box">
           <div id="mainbox">
             <div id="numbers-clear-box">
             <ButtonPad
@@ -159,7 +179,7 @@ class App extends Component {
           typeArray={arithmeticOperatorArray}
           />
           </div>
-
+          </div>
       </div>
     );
   }

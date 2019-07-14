@@ -1,31 +1,42 @@
-@import url(//db.onlinewebfonts.com/c/254227acc02f2e078096f6085c21a5e6?family=Terminator+Cyr);
-
+/* @import url(//db.onlinewebfonts.com/c/254227acc02f2e078096f6085c21a5e6?family=Terminator+Cyr); */
+@font-face {
+  font-family: Terminator;
+ src: url('terminatorFont/terminator_real_nfi.woff');
+}
 .App {
   text-align: center;
   background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
+
+#keyboard-box{
+  width: 350px;
+  display: flex;
+  align-self: center;
+}
+
 #mainbox{
-  height: 254px;
+  height: 370px;
   display: flex;
   flex-flow: wrap;
-  width: 165px;
+  width: 290px;
   /* justify-content: space-between; */
 }
 
 .pad-button{
-  min-height: 40px;
-  min-width: 40px;
+  min-height: 70px;
+  min-width: 70px;
   border-radius: 50%;
   border: none;
   margin: .5px;
+
 }
 
 #numbers-clear-box {
@@ -46,6 +57,8 @@
 #numbers0{
   width: 66%;
   border-radius: 20px;
+  text-align: left;
+  padding-left: 13.5%;
 }
 
 .numbers.container {
@@ -62,7 +75,7 @@
 .clear.container {
   width: 100%;
   order: 1;
-  height: 41px;
+  height: 20%;
 }
 
 .clear button {
@@ -76,11 +89,12 @@
   animation-duration: 30s;
   font-size: 40px;
   display: block;
-  font-family: 'Terminator Cyr', arial;
+  font-family: Terminator, arial;
 }
 
-.non-basic-function-buttons{
+#side-screen button{
   background-color: #212121;
+  color: white;
 }
 
 @keyframes fade-in {
@@ -96,8 +110,27 @@
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
    #title{
      font-size: 26px;
+   }
+
+   #side-screen{
+     display: none;
+   }
+   #keyboard-box{
+     justify-content: center;
+     width: 100%;
+   }
+   #mainbox{
+     /* width: 300px; */
+     height:100%;
+   }
+   button {
+     width:31%;
+     height:auto;
+   }
+   #numbers0 {
+     border-radius: 10vh;
    }
  }
